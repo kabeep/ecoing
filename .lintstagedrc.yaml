@@ -1,0 +1,5 @@
+"src/**/*.{js,ts}":
+  - "biome check src --write"
+
+"bin/**/*.{js,ts}":
+  - "biome check bin --write"
