@@ -1,0 +1,112 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+    "vcs": {
+        "enabled": false,
+        "useIgnoreFile": true,
+        "clientKind": "git",
+        "defaultBranch": "master"
+    },
+    "files": {
+        "includes": [
+            "src/**/*",
+            "bin/**/*"
+        ],
+        "ignoreUnknown": true,
+        "maxSize": 1048576
+    },
+    "linter": {
+        "enabled": true,
+        "includes": [
+            "**"
+        ],
+        "rules": {
+            "recommended": true
+        }
+    },
+    "formatter": {
+        "enabled": true,
+        "includes": [
+            "**"
+        ],
+        "formatWithErrors": false,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf",
+        "lineWidth": 80,
+        "attributePosition": "auto",
+        "bracketSpacing": true,
+        "expand": "auto"
+    },
+    "javascript": {
+        "formatter": {
+            "enabled": true,
+            "quoteStyle": "single",
+            "indentStyle": "space",
+            "indentWidth": 4,
+            "lineWidth": 80,
+            "lineEnding": "lf",
+            "jsxQuoteStyle": "double",
+            "trailingCommas": "all",
+            "semicolons": "always",
+            "quoteProperties": "asNeeded",
+            "arrowParentheses": "always",
+            "attributePosition": "auto",
+            "expand": "auto"
+        }
+    },
+    "html": {
+        // Syntax for Vue, Svelte and Astro
+        "experimentalFullSupportEnabled": true
+    },
+    "css": {
+        "formatter": {
+            "enabled": false,
+            "lineWidth": 80,
+            "quoteStyle": "double"
+        }
+    },
+    "overrides": [
+        {
+            "includes": [
+                "**/*.svelte",
+                "**/*.astro",
+                "**/*.vue"
+            ],
+            "linter": {
+                "rules": {
+                    "style": {
+                        "useConst": "off",
+                        "useImportType": "off"
+                    },
+                    "correctness": {
+                        "noUnusedVariables": "off",
+                        "noUnusedImports": "off"
+                    }
+                }
+            }
+        },
+        {
+            "includes": [
+                "src/**/*.vue"
+            ],
+            "javascript": {
+                "globals": [
+                    "defineEmits",
+                    "defineProps",
+                    "defineExpose",
+                    "defineModel",
+                    "defineOptions",
+                    "defineSlots"
+                ]
+            }
+        }
+    ],
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "source": {
+                "organizeImports": "on"
+            }
+        }
+    }
+}
