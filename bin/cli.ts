@@ -1,7 +1,9 @@
-import greeting from '../src';
+import process from 'node:process';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+import { type PullCommandOptions, pullCommand } from './commands';
 
-function cli() {
-    greeting();
-}
-
-cli();
+yargs(hideBin(process.argv))
+    .scriptName('devs')
+    .usage('$0 <command> [arguments]')
+    .command<PullCommandOptions>(pullCommand);
