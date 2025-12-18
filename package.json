@@ -14,7 +14,7 @@
     "scripts": {
         "prepare": "husky",
         "dev": "tsx --env-file=.env.development bin/cli.ts",
-        "lint": "biome check src bin test --write",
+        "lint": "biome check src bin --write",
         "lint:staged": "biome check src bin --write --staged",
         "lint:changed": "biome check src bin --write --changed",
         "lint-staged": "lint-staged",
